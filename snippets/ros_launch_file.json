@@ -46,6 +46,14 @@
         ],
         "description": "ROS node simple"
     },
+    "nodeIf": {
+        "prefix": "nodeIf",
+        "body": [
+            "<node ${1|if,unless|}=\"$(arg ${2:arg_name})}\" name=\"${3:node_name}\" pkg=\"${4:$1}\" type=\"${5:$1}\"${6: output=\"screen\"}/>",
+            "${0}"
+        ],
+        "description": "ROS node simple"
+    },
     "param": {
         "prefix": "param",
         "body": "<param name=\"${1}\" value=\"${2}\"/>\n${0}",
@@ -76,7 +84,7 @@
     "group": {
         "prefix": "group",
         "body": [
-            "<group ${2|if,unless|}=\"${3:$(arg ${4:arg_name})}\">",
+            "<group ${2|if,unless|}=\"$(arg ${3:arg_name})}\">",
             "\t${0}",
             "</group>"
         ],
