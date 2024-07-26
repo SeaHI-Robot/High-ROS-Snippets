@@ -3,6 +3,7 @@
 	"displayName": "High ROS Snippets",
 	"description": "ROS (Robot Operating System) snippets for rospy, roscpp, launch, urdf, xacro etc.",
 	"version": "0.0.1",
+     "publisher": "SeaHI-Robot",
 	"icon": "media/icon.png",
 	"keywords": [
 		"ros",
