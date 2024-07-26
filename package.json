@@ -1,9 +1,8 @@
 {
-	"name": "ros-snippets",
-	"displayName": "ROS Snippets",
+	"name": "high-ros-snippets",
+	"displayName": "High ROS Snippets",
 	"description": "ROS (Robot Operating System) snippets for rospy, roscpp, launch, urdf, xacro etc.",
-	"version": "0.1.0",
-	"publisher": "sweilz",
+	"version": "0.0.1",
 	"icon": "media/icon.png",
 	"keywords": [
 		"ros",
@@ -11,7 +10,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/SweiLz/ROS-Snippets"
+		"url": "https://github.com/SeaHI-Robot/High-ROS-Snippets"
 	},
 	"engines": {
 		"vscode": "^1.44.0"
@@ -59,10 +58,5 @@
 				"path": "./snippets/ros_cpp_snippets.json"
 			}
 		]
-	},
-	"__metadata": {
-		"id": "57e1ca0b-e650-4732-ae75-72be97b23976",
-		"publisherDisplayName": "Liews Wuttipat",
-		"publisherId": "82851a77-f3c2-4095-81e3-4e07bb970da6"
 	}
 }
