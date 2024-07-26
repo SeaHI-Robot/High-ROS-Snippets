@@ -49,7 +49,7 @@
     "nodeIf": {
         "prefix": "nodeIf",
         "body": [
-            "<node ${1|if,unless|}=\"$(arg ${2:arg_name})}\" name=\"${3:node_name}\" pkg=\"${4:$1}\" type=\"${5:$1}\"${6: output=\"screen\"}/>",
+            "<node ${1|if,unless|}=\"$(arg ${2:arg_name})\" name=\"${3:node_name}\" pkg=\"${4:$1}\" type=\"${5:$1}\"${6: output=\"screen\"}/>",
             "${0}"
         ],
         "description": "ROS node simple"
