@@ -1,0 +1,38 @@
+{
+    "add_launch_config_in_setup_py": {
+        "prefix": "ros2_launch_file_python_setup",
+        "body": [
+            "(os.path.join('share', package_name, 'launch'), glob(os.path.join('launch', '*launch.py')))",
+            "(os.path.join('share', package_name, 'launch'), glob(os.path.join('launch', '*launch.xml')))",
+            "(os.path.join('share', package_name, 'launch'), glob(os.path.join('launch', '*launch.yaml')))"
+        ],
+        "description": "ROS2 Launch File Config in setup.py"
+    },
+    "rclpy_init": {
+        "prefix": "rclpy_init",
+        "body": [
+            "rclpy.init()"
+        ],
+        "description": "ROS2 rclpy init"
+    },
+    "rclpy_spin": {
+        "prefix": "rclpy_spin",
+        "body": [
+            "rclpy.spin(${1:/*node_name*/)"
+        ],
+        "description": "ROS2 rclpy spin a node"
+    },
+    "rclpy_shutdown": {
+        "prefix": "rclpy_shutdown",
+        "body": [
+            "rclpy.shutdown()"
+        ],
+        "description": "ROS2 rclpy shutdown a node"
+    },
+    "rclpy_info_OOP": {
+        "prefix": "rclpy_info_OOP",
+        "body": [
+            "self.get_logger().info('Logging: \"%s\"' % msg.data)"
+        ]
+    }
+}

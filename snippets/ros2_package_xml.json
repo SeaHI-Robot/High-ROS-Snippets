@@ -1,0 +1,32 @@
+{
+    "action_config": {
+        "prefix": "ros2_package_xml_generate_custom_action_config",
+        "body": [
+            "<!-- Custom Action Config -->",
+            "<buildtool_depend>rosidl_default_generators</buildtool_depend>",
+            "<depend>action_msgs</depend>",
+            "<member_of_group>rosidl_interface_packages</member_of_group>"
+        ],
+        "description": "ROS2 action config in package.xml"
+    },
+    "custom msg srv config": {
+        "prefix": "ros2_package_xml_generate_custom_msg_srv_config",
+        "body": [
+            "<!-- Custom msg & srv Config -->",
+            "<buildtool_depend>rosidl_default_generators</buildtool_depend>",
+            "<exec_depend>rosidl_default_runtime</exec_depend>",
+            "<member_of_group>rosidl_interface_packages</member_of_group>",
+            ""
+        ],
+        "description": "ROS2 action config in package.xml"
+    },
+    "declare launch file dependency config": {
+        "prefix": "ros2_package_xml_launch_config",
+        "body": [
+            "<!-- Launch file dependency for ros2  -->",
+            "<exec_depend>ros2launch</exec_depend>",
+            ""
+        ],
+        "description": "ROS2 action config in package.xml"
+    }
+}

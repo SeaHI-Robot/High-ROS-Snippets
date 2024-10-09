@@ -1,0 +1,22 @@
+{
+    "rclcpp::init": {
+        "prefix": "rclcpp_init",
+        "body": "rclcpp::init(argc, argv);",
+        "description": "rclcpp_init"
+    },
+    "rclcpp::spin": {
+        "prefix": "rclcpp_spin",
+        "body": "rclcpp::spin(std::make_shared<${1:Node_Class}>());",
+        "description": "rclcpp_spin"
+    },
+    "rclcpp::shutdown": {
+        "prefix": "rclcpp_shutdown",
+        "body": "rclcpp::shutdown();",
+        "description": "rclcpp_shutdown"
+    },
+    "rclcpp_info_OOP": {
+        "prefix": "rclcpp_info_OOP",
+        "body": "RCLCPP_INFO(this->get_logger(), \"Logging: '%s'\", message.data.c_str());",
+        "description": "ros::ServiceServer"
+    }
+}

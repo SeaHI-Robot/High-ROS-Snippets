@@ -1,0 +1,71 @@
+{
+    "name": "high-ros2-snippets",
+    "displayName": "High ROS2 Snippets",
+    "description": " Visual Code extension with a collection of ROS2 (Robot Operating System 2) snippets for rclcpp, rclpy, launch(xml, python), CMakelists.txt, package.xml, urdffiles. ",
+    "version": "0.0.2",
+    "publisher": "SeaHI-Robot",
+    "icon": "media/icon.png",
+    "keywords": [
+        "ros",
+        "robot"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/SeaHI-Robot/High-ROS2-Snippets"
+    },
+    "engines": {
+        "vscode": "^1.44.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "xml",
+                "extensions": [
+                    "launch",
+                    "srdf",
+                    "urdf",
+                    "xacro"
+                ]
+            },
+            {
+                "id": "yaml",
+                "extensions": [
+                    "rviz"
+                ]
+            }
+        ],
+        "snippets": [
+            {
+                "language": "xml",
+                "path": "./snippets/ros2_urdf_snippets.json"
+            },
+            {
+                "language": "xml",
+                "path": "./snippets/ros2_xml_launch_file.json"
+            },
+            {
+                "language": "xml",
+                "path": "./snippets/ros2_package_xml.json"
+            },
+            {
+                "language": "python",
+                "path": "./snippets/ros2_py_snippets.json"
+            },
+            {
+                "language": "python",
+                "path": "./snippets/ros2_py_launch_file.json"
+            },
+            {
+                "language": "cpp",
+                "path": "./snippets/ros2_cpp_snippets.json"
+            },
+            {
+                "language": "cmake",
+                "path": "./snippets/ros2_cmake_snippets.json"
+            }
+        ]
+    }
+}

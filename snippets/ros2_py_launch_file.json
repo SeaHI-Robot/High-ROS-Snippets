@@ -1,0 +1,21 @@
+{
+    "ros2_launch_template": {
+        "prefix": "ros2_launch_template",
+        "body": [
+            "import launch",
+            "import launch_ros.actions",
+            "",
+            "def generate_launch_description():",
+            "    return launch.LaunchDescription(",
+            "        [",
+            "            launch_ros.actions.Node(",
+            "                package='${1:package_name}',",
+            "                executable='${2:executable_name}',",
+            "                name='${3:node_name}',",
+            "            )",
+            "        ]",
+            "    )"
+        ],
+        "description": "ROS2 launch template"
+    }
+}

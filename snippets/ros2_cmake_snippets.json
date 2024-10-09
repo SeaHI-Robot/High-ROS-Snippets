@@ -1,0 +1,96 @@
+{
+    "ROS2_launch_file_config": {
+        "prefix": "ros2_cmakelists_launch_file_config",
+        "body": [
+            "# Install launch files",
+            "install(DIRECTORY",
+            "  launch",
+            "  DESTINATION share/${PROJECT_NAME}/",
+            ")",
+            ""
+        ],
+        "description": "ROS2 Launch File Config in CMakeLists.txt"
+    },
+    "Add Executable in CMake": {
+        "prefix": "ros2_cmakelists_add_executable()",
+        "body": "add_executable(${1:/*exec_name*/} src/${2:/*source_code*/}.cpp)",
+        "description": "Add an executable target in CMakeLists.txt"
+    },
+    "Ament Target Dependencies": {
+        "prefix": "ros2_cmakelists_ament_target_dependencies()",
+        "body": [
+            "ament_target_dependencies(${1:TARGET_NAME}",
+            "  ${1:DEPENDENCY_1}",
+            "  ${2:DEPENDENCY_2}",
+            ")",
+            ""
+        ],
+        "description": "Add dependencies to ament library or executable target"
+    },
+    "Install Targets": {
+        "prefix": "ros2_cmakelists_install()",
+        "body": [
+            "install(TARGETS",
+            "  ${1:exec_1}",
+            "  ${2:exec_2}",
+            "  DESTINATION lib/${5:PROJECT_NAME})",
+            ""
+        ],
+        "description": "Install targets to the specified destination directory"
+    },
+    "ROS2_custom_generate_custom_msg_srv_config": {
+        "prefix": "ros2_cmakelists_generate_custom_msg_srv_config",
+        "body": [
+            "# Generate Custom msg and srv Config",
+            "find_package(rosidl_default_generators REQUIRED)",
+            "",
+            "rosidl_generate_interfaces(${PROJECT_NAME}",
+            "  \"msg/${1:MyMsg}.msg\"",
+            "  \"srv/${2:MySrv}.srv\"",
+            "  DEPENDENCIES ${3:/* Dependent PKG，remove this line if no dependencies, e.g. geometry_msgs */} # Add packages that above messages depend on, in this case geometry_msgs for Sphere.msg",
+            ")",
+            ""
+        ],
+        "description": "Generate Custom msg & srv Interface"
+    },
+    "ROS2_cmakelists_generate_custom_action_config": {
+        "prefix": "ros2_cmakelists_generate_custom_action_config",
+        "body": [
+            "# Generate Custom action Config",
+            "find_package(rosidl_default_generators REQUIRED)",
+            "",
+            "rosidl_generate_interfaces(${PROJECT_NAME}",
+            "  \"action/${1:MyAction}.action\"",
+            ")",
+            ""
+        ],
+        "description": "Generate Custom action Interface"
+    },
+    "ROS2_cmakelists_using_action_config": {
+        "prefix": "ros2_cmakelists_use_action_config",
+        "body": [
+            "add_library(${1:lib_name} SHARED src/${2:source_code_name}.cpp)",
+            "target_include_directories(${6:$1} PRIVATE",
+            "  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>",
+            "  $<INSTALL_INTERFACE:include>",
+            ")",
+            "target_compile_definitions(my_action_server",
+            "PRIVATE \"ACTION_USE_BUILDING_DLL\"",
+            ")",
+            "ament_target_dependencies(${6:$1}",
+            "  ${7:package_that_define_action_file}",
+            "  rclcpp",
+            "  rclcpp_action",
+            "  rclcpp_components",
+            ")",
+            "rclcpp_components_register_node(${6:$1} PLUGIN \"${3:name_space}::${4:class_name}\" EXECUTABLE ${5:action_node_name})",
+            "install(TARGETS",
+            "  ${6:$1}",
+            "  ARCHIVE DESTINATION lib",
+            "  LIBRARY DESTINATION lib",
+            "  RUNTIME DESTINATION bin",
+            ")"
+        ],
+        "description": "Configurations when using action"
+    }
+}
