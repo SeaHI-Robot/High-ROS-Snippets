@@ -1,0 +1,29 @@
+{
+    "rclcpp_simple_node": {
+        "prefix": "rclcpp_simple_node",
+        "body": [
+            "#include \"rclcpp/rclcpp.hpp\"",
+            "",
+            "$1",
+            "int main(int argc, char **argv) {",
+            "  rclcpp::init(argc, argv);",
+            "  auto node = std::make_shared<rclcpp::Node>(\"${2:talker_node}\");",
+            "  RCLCPP_INFO(node->get_logger(), \"Talker node is start!\");",
+            "  rclcpp::spin(node);",
+            "  rclcpp::shutdown();",
+            "  return 0;",
+            "}"
+        ],
+        "description": "rclcpp_simple_node"
+    },
+    "rclcpp::init": {
+        "prefix": "rclcpp_init",
+        "body": "rclcpp::init(argc, argv);",
+        "description": "rclcpp_init"
+    },
+    "rclcpp_info": {
+        "prefix": "rclcpp_info",
+        "body": "RCLCPP_INFO(this->get_logger(), \"Printing: '%s'\", message.data.c_str());",
+        "description": "ros::ServiceServer"
+    }
+}
