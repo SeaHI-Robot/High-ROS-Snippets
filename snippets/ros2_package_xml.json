@@ -28,12 +28,5 @@
             ""
         ],
         "description": "ROS2 action config in package.xml"
-    },
-    "add executable for python script in setup.py": {
-        "prefix": "rclpy_add_executable_extry_points_in_setup.py",
-        "body": [
-            "${1:executable_name} = ${2:package_name}.${3:script_name}:main"
-        ],
-        "description": "ROS2 add entry point for setup.py"
     }
 }

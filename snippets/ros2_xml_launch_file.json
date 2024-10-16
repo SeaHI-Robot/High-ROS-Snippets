@@ -1,36 +1,36 @@
 {
     "launch": {
-        "prefix": "launch",
+        "prefix": "ros2_launch_template",
         "body": [
             "<?xml version=\"1.0\"?>",
             "<launch>\n",
             "\t${0}",
             "\n</launch>"
         ],
-        "description": "ROS22 launch template"
+        "description": "ROS2 launch template"
     },
     "arg": {
-        "prefix": "arg",
+        "prefix": "ros2_launch_arg",
         "body": "<arg name=\"${1}\"/>\n$0",
         "description": "ROS2 argument"
     },
     "argValue": {
-        "prefix": "arg_value",
+        "prefix": "ros2_launch_arg_value",
         "body": "<arg name=\"${1}\" value=\"${2}\"/>\n$0",
         "description": "ROS2 argument with value"
     },
     "argDefault": {
-        "prefix": "arg_default",
+        "prefix": "ros2_launch_arg_default",
         "body": "<arg name=\"${1}\" default=\"${2}\"/>\n$0",
         "description": "ROS2 argument with default"
     },
     "argDefaultDoc": {
-        "prefix": "arg_default_doc",
+        "prefix": "ros2_launch_arg_default_doc",
         "body": "<arg name=\"${1}\" default=\"${2}\" doc=\"${3}\"/>\n$0",
         "description": "ROS2 argument with default and document"
     },
     "nodeComplex": {
-        "prefix": "nodeComplex",
+        "prefix": "ros2_launch_nodeComplex",
         "body": [
             "<node name=\"${1:node_name}\" pkg=\"${2:ros_package}\" exec=\"${3:executable}\"  output=\"${4|log,screen|}\" respawn=\"${5|false,true|}\" respawn_delay=\"${6:0}\">",
             "\t${0}",
@@ -39,7 +39,7 @@
         "description": "ROS2 node with complex settings"
     },
     "nodeSimple": {
-        "prefix": "nodeSimple",
+        "prefix": "ros2_launch_nodeSimple",
         "body": [
             "<node name=\"${1:node_name}\" pkg=\"${2:package_name}\" exec=\"${3:executable_name}\"${4: output=\"screen\"}/>",
             "${0}"
@@ -47,7 +47,7 @@
         "description": "ROS2 node simple"
     },
     "nodeIf": {
-        "prefix": "nodeIf",
+        "prefix": "ros2_launch_nodeIf",
         "body": [
             "<node ${1|if,unless|}=\"$(arg ${2:arg_name})\" name=\"${3:node_name}\" pkg=\"${4:package_name}\" exec=\"${5:executable_name}\"${6: output=\"screen\"}/>",
             "${0}"
@@ -55,17 +55,17 @@
         "description": "ROS2 node simple"
     },
     "param": {
-        "prefix": "param",
+        "prefix": "ros2_launch_param",
         "body": "<param name=\"${1}\" value=\"${2}\"/>\n${0}",
         "description": "ROS2 Param"
     },
     "rosParam": {
-        "prefix": "rosParam",
+        "prefix": "ros2_launch_rosParam",
         "body": "<rosparam command=\"load\" file=\"${1:$(find ${2:ros_package_name})}/${3}\"/>\n${0}",
         "description": "ROS2 Param"
     },
     "includeComplex": {
-        "prefix": "includeComplex",
+        "prefix": "ros2_launch_includeComplex",
         "body": [
             "<include file=\"${1:$(find ${2:ros_package_name})/}${3}\">",
             "\t${0}",
@@ -74,7 +74,7 @@
         "description": "ROS2 Include tag"
     },
     "includeSimple": {
-        "prefix": "includeSimple",
+        "prefix": "ros2_launch_includeSimple",
         "body": [
             "<include file=\"${1:$(find ${2:ros_package_name})/}${3}\"/>",
             "${0}"
@@ -82,7 +82,7 @@
         "description": "ROS2 Include inline"
     },
     "group": {
-        "prefix": "group",
+        "prefix": "ros2_launch_group",
         "body": [
             "<group ${2|if,unless|}=\"$(arg ${3:arg_name})}\">",
             "\t${0}",
@@ -91,7 +91,7 @@
         "description": "ROS2 Group"
     },
     "remap": {
-        "prefix": "remap",
+        "prefix": "ros2_launch_remap",
         "body": [
             "<remap from=\"${1}\" to=\"${2}\"/>",
             "${0}"
