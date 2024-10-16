@@ -16,6 +16,13 @@
             "        ]",
             "    )"
         ],
-        "description": "ROS2 launch template"
+        "description": "ROS2 launch in python template"
+    },
+    "ros2_launch_config_in_setup_py": {
+        "prefix": "ros2_launch_file_python_config",
+        "body": [
+            "(os.path.join('share', package_name, 'launch'), glob(os.path.join('launch', '*launch.[pxy][yma]*')))",
+        ],
+        "description": "ROS2 Launch File Config in setup.py"
     }
 }

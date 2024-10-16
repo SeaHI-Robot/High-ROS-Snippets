@@ -1,13 +1,4 @@
 {
-    "add_launch_config_in_setup_py": {
-        "prefix": "ros2_launch_file_python_setup",
-        "body": [
-            "(os.path.join('share', package_name, 'launch'), glob(os.path.join('launch', '*launch.py')))",
-            "(os.path.join('share', package_name, 'launch'), glob(os.path.join('launch', '*launch.xml')))",
-            "(os.path.join('share', package_name, 'launch'), glob(os.path.join('launch', '*launch.yaml')))"
-        ],
-        "description": "ROS2 Launch File Config in setup.py"
-    },
     "rclpy_init": {
         "prefix": "rclpy_init",
         "body": [

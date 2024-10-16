@@ -2,7 +2,7 @@
     "name": "high-ros2-snippets",
     "displayName": "High ROS2 Snippets",
     "description": " Visual Code extension with a collection of ROS2 (Robot Operating System 2) snippets for rclcpp, rclpy, launch(xml, python), CMakelists.txt, package.xml, urdffiles. ",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "SeaHI-Robot",
     "icon": "media/icon.png",
     "keywords": [
@@ -56,7 +56,7 @@
             },
             {
                 "language": "python",
-                "path": "./snippets/ros2_py_launch_file.json"
+                "path": "./snippets/ros2_py_utils_file.json"
             },
             {
                 "language": "cpp",

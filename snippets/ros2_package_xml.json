@@ -7,7 +7,7 @@
             "<depend>action_msgs</depend>",
             "<member_of_group>rosidl_interface_packages</member_of_group>"
         ],
-        "description": "ROS2 action config in package.xml"
+        "description": "ROS2 generate custom action config in package.xml"
     },
     "custom msg srv config": {
         "prefix": "ros2_package_xml_generate_custom_msg_srv_config",
@@ -18,7 +18,7 @@
             "<member_of_group>rosidl_interface_packages</member_of_group>",
             ""
         ],
-        "description": "ROS2 action config in package.xml"
+        "description": "ROS2 generate custom msg srv config in package.xml"
     },
     "declare launch file dependency config": {
         "prefix": "ros2_package_xml_launch_config",
@@ -28,5 +28,12 @@
             ""
         ],
         "description": "ROS2 action config in package.xml"
+    },
+    "add executable for python script in setup.py": {
+        "prefix": "rclpy_add_executable_extry_points_in_setup.py",
+        "body": [
+            "${1:executable_name} = ${2:package_name}.${3:script_name}:main"
+        ],
+        "description": "ROS2 add entry point for setup.py"
     }
 }
