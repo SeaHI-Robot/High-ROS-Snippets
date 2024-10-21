@@ -2,7 +2,7 @@
     "name": "high-ros2-snippets",
     "displayName": "High ROS2 Snippets",
     "description": " Visual Code extension with a collection of ROS2 (Robot Operating System 2) snippets for rclcpp, rclpy, launch(xml, python), CMakelists.txt, package.xml, urdffiles. ",
-    "version": "0.3.4",
+    "version": "0.3.5",
     "publisher": "syw-sustech",
     "icon": "media/icon.png",
     "keywords": [
@@ -44,23 +44,23 @@
             },
             {
                 "language": "xml",
-                "path": "./snippets/ros2_xml_launch_file.json"
+                "path": "./snippets/ros2_xml_launch_file_snippets.json"
             },
             {
                 "language": "xml",
-                "path": "./snippets/ros2_package_xml.json"
+                "path": "./snippets/ros2_package_xml_snippets.json"
             },
             {
                 "language": "python",
-                "path": "./snippets/ros2_py_snippets.json"
+                "path": "./snippets/ros2_rclpy_snippets.json"
             },
             {
                 "language": "python",
-                "path": "./snippets/ros2_py_utils_file.json"
+                "path": "./snippets/ros2_py_utils_snippets.json"
             },
             {
                 "language": "cpp",
-                "path": "./snippets/ros2_cpp_snippets.json"
+                "path": "./snippets/ros2_rclcpp_snippets.json"
             },
             {
                 "language": "cmake",
