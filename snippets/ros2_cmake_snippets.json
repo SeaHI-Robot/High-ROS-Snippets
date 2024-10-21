@@ -20,8 +20,8 @@
         "prefix": "ros2_cmakelists_ament_target_dependencies()",
         "body": [
             "ament_target_dependencies(${1:TARGET_NAME}",
-            "  ${1:DEPENDENCY_1}",
-            "  ${2:DEPENDENCY_2}",
+            "  ${2:DEPENDENCY_1}",
+            "  ${3:DEPENDENCY_2}",
             ")",
             ""
         ],
