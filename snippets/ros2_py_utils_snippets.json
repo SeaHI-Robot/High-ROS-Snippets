@@ -21,6 +21,7 @@
     "ros2_launch_config_in_setup_py": {
         "prefix": "ros2_launch_file_python_config",
         "body": [
+            "# Launch File Config below should be added in \"data_files\" Section",
             "(os.path.join('share', package_name, 'launch'), glob(os.path.join('launch', '*launch.[pxy][yma]*')))"
         ],
         "description": "ROS2 Launch File Config in setup.py"
@@ -28,7 +29,7 @@
     "ros2_entry_points_config_in_setup_py": {
         "prefix": "ros2_entry_points_config_in_setup_py",
         "body": [
-            "${1:excutable_name} = ${2:package_name}.${3:python_script_name}:main,"
+            "\"${1:excutable_name} = ${2:package_name}.${3:python_script_name}:main\","
         ],
         "description": "ROS2 ros2 Entry Points Config in setup.py"
     }
