@@ -5,7 +5,7 @@
             "# Install launch files",
             "install(DIRECTORY",
             "  launch",
-            "  DESTINATION share/${PROJECT_NAME}/",
+            "  DESTINATION share/\\${PROJECT_NAME}/",
             ")",
             ""
         ],
@@ -27,24 +27,24 @@
         ],
         "description": "Add dependencies to ament library or executable target"
     },
-    "Install Targets": {
+    "ROS2_cmakelists_install_targets": {
         "prefix": "ros2_cmakelists_install()",
         "body": [
             "install(TARGETS",
             "  ${1:exec_1}",
             "  ${2:exec_2}",
-            "  DESTINATION lib/${5:PROJECT_NAME})",
+            "  DESTINATION lib/\\${PROJECT_NAME})",
             ""
         ],
         "description": "Install targets to the specified destination directory"
     },
-    "ROS2_custom_generate_custom_msg_srv_config": {
+    "ROS2_cmakelists_custom_generate_custom_msg_srv_config": {
         "prefix": "ros2_cmakelists_generate_custom_msg_srv_config",
         "body": [
             "# Generate Custom msg and srv Config",
             "find_package(rosidl_default_generators REQUIRED)",
             "",
-            "rosidl_generate_interfaces(${PROJECT_NAME}",
+            "rosidl_generate_interfaces(\\${PROJECT_NAME}",
             "  \"msg/${1:MyMsg}.msg\"",
             "  \"srv/${2:MySrv}.srv\"",
             "  DEPENDENCIES ${3:/* Dependent PKG，remove this line if no dependencies, e.g. geometry_msgs */} # Add packages that above messages depend on, in this case geometry_msgs for Sphere.msg",
@@ -59,7 +59,7 @@
             "# Generate Custom action Config",
             "find_package(rosidl_default_generators REQUIRED)",
             "",
-            "rosidl_generate_interfaces(${PROJECT_NAME}",
+            "rosidl_generate_interfaces(\\${PROJECT_NAME}",
             "  \"action/${1:MyAction}.action\"",
             ")",
             ""
@@ -70,22 +70,22 @@
         "prefix": "ros2_cmakelists_use_action_config",
         "body": [
             "add_library(${1:lib_name} SHARED src/${2:source_code_name}.cpp)",
-            "target_include_directories(${6:$1} PRIVATE",
-            "  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>",
+            "target_include_directories(${7:$1} PRIVATE",
+            "  $<BUILD_INTERFACE:\\${CMAKE_CURRENT_SOURCE_DIR}/include>",
             "  $<INSTALL_INTERFACE:include>",
             ")",
             "target_compile_definitions(my_action_server",
-            "PRIVATE \"ACTION_USE_BUILDING_DLL\"",
+            "PRIVATE \"${4:NAME_SPACE}_BUILDING_DLL\"",
             ")",
-            "ament_target_dependencies(${6:$1}",
+            "ament_target_dependencies(${7:$1}",
             "  ${7:package_that_define_action_file}",
             "  rclcpp",
             "  rclcpp_action",
             "  rclcpp_components",
             ")",
-            "rclcpp_components_register_node(${6:$1} PLUGIN \"${3:name_space}::${4:class_name}\" EXECUTABLE ${5:action_node_name})",
+            "rclcpp_components_register_node(${7:$1} PLUGIN \"${3:name_space}::${5:class_name}\" EXECUTABLE ${6:action_node_name})",
             "install(TARGETS",
-            "  ${6:$1}",
+            "  ${7:$1}",
             "  ARCHIVE DESTINATION lib",
             "  LIBRARY DESTINATION lib",
             "  RUNTIME DESTINATION bin",

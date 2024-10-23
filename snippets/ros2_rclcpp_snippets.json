@@ -68,5 +68,13 @@
             "#endif  // ${1:PREFIX}__VISIBILITY_CONTROL_H_"
         ],
         "description": "Creates a visibility control header with a specified prefix."
+    },
+    "rclcpp_components_regester_node": {
+        "prefix": "rclcpp_components_regester_node",
+        "body": [
+            "#include \"rclcpp_components/register_node_macro.hpp\"",
+            "RCLCPP_COMPONENTS_REGISTER_NODE(${1:namespace}::${2:class_name})"
+        ],
+        "description": "RCLCPP_COMPONENTS_REGISTER_NODE"
     }
 }
